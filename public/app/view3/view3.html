@@ -1,7 +1,42 @@
-<p>This is the partial for view 3.</p>
-<p>Data is fetched from a REST service, connected to MongoDB </p>
-<ul>
-  <p style="color: red">{{error}}</p>
-  <li ng-repeat="user in users"> {{user.userName}} {{user.email}} </li>
-</ul>
-</p>
+
+<h3><strong>The Search page</strong></h3>
+
+<p>The Search page</p>
+
+<form method="get" action="">
+    <input ng-model="searchString" type="text" name="search" id="search" value="" />
+    <input ng-click="getWiki()" type="submit" name="gettingWiki" value="Search specific title" class="btn btn-primary" />
+    <input ng-click="findWiki()" type="submit" name="findingWiki" value="Search everything" class="btn btn-primary"/>
+</form>
+<h4><strong>Displaying the found Wiki</strong></h4>
+
+<p>Displaying the found Wiki</p>
+
+<br/>
+
+<table class="table" ng-repeat="wiki in foundWiki" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+
+    <tr>
+        <td>
+            <h5>
+                <button ng-click="showThis()">{{wiki.title}}</button>
+            </h5>
+        </td>
+        <td>
+            <div ng-show="hoverEdit">
+                {{wiki.abstract}}
+            </div>
+        </td>
+
+    <tr ng-show="showing">
+    <tr ng-show="showing"><td>{{wiki.abstract}}</td></tr>
+    <tr ng-show="showing"><td><li ng-repeat="link in wiki.links"><a href='{{link}}'>{{link}}</a></li></td></tr>
+    <tr ng-show="showing"><td><li ng-repeat="cat in wiki.categories">{{cat}}</li></td></tr>
+    </tr>
+    </tr>
+</table>
+<style>
+    body {
+        background-color: #2b542c;
+    }
+</style>

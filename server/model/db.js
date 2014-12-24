@@ -49,12 +49,14 @@ process.on('SIGINT', function() {
 
 /** User SCHEMA **/
 /** Replace this Schema with your own(s) **/
-var usersSchema = new mongoose.Schema({
-  userName : String,
-  email: {type: String, unique: true},
-  pw: String,
-  created: { type: Date, default: new Date() }
+var wikiSchema = new mongoose.Schema({
+  title : {type: String, unique: true},
+  url : String,
+  abstract : String,
+  categories : [String],
+  links : [String],
+  headings : [{heading: String, position: Number}]
 });
 
-mongoose.model( 'User', usersSchema,"testusers" );
+exports.wikiModel = mongoose.model('wiki', wikiSchema, 'wiki')
 

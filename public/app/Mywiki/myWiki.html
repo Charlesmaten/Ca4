@@ -1,0 +1,18 @@
+<p><h3><strong>myWiki</strong></h3></p>
+
+<form method="get" action="">
+    <input ng-model="searchString"type="text" name="search" id="search" value="" />
+    <input ng-click="getCategories()" class="btn btn-primary" type="submit" name="gettingCategories" value="Get all Categories" />
+    <input ng-click="getWikisWithCategory()" class="btn btn-primary" type="submit" name="gettingWikisWithCategory" value="Get Wikis with Category" />
+
+    <p><h4><strong>Displaying the found Wiki</strong></h4></p>
+    <br/>
+    <p ng-repeat="wiki in foundWiki">{{wiki}}</p>
+</form>
+
+<style>
+
+    body {
+        background-color: yellow;
+    }
+</style>
