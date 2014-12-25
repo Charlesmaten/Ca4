@@ -1,16 +1,17 @@
 
-<h3><strong>The Search page</strong></h3>
+<h3><strong>Search</strong></h3>
 
-<p>The Search page</p>
+<p>What would you like to search for?</p>
 
 <form method="get" action="">
     <input ng-model="searchString" type="text" name="search" id="search" value="" />
+    <br/>
+    <br/>
     <input ng-click="getWiki()" type="submit" name="gettingWiki" value="Search specific title" class="btn btn-primary" />
     <input ng-click="findWiki()" type="submit" name="findingWiki" value="Search everything" class="btn btn-primary"/>
 </form>
-<h4><strong>Displaying the found Wiki</strong></h4>
+<h4><strong>Search Results</strong></h4>
 
-<p>Displaying the found Wiki</p>
 
 <br/>
 
@@ -28,15 +29,7 @@
             </div>
         </td>
 
-    <tr ng-show="showing">
-    <tr ng-show="showing"><td>{{wiki.abstract}}</td></tr>
-    <tr ng-show="showing"><td><li ng-repeat="link in wiki.links"><a href='{{link}}'>{{link}}</a></li></td></tr>
-    <tr ng-show="showing"><td><li ng-repeat="cat in wiki.categories">{{cat}}</li></td></tr>
+
     </tr>
     </tr>
 </table>
-<style>
-    body {
-        background-color: #2b542c;
-    }
-</style>

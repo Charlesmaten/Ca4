@@ -26,8 +26,8 @@ router.get('/findWiki/:search', function(req, res) {
     else {
       res.json(result);
     }
-  })
-})
+  });
+});
 
 
 

@@ -34,24 +34,24 @@ var findWiki = function(searchString, done) {
 
     var results = [];
 
-    wikiModel.find({title: new ReqExp(searchString, 'i')}).exec(function(err, res) {
+    wikiModel.find({title: new RegExp(searchString, 'i')}).exec(function(err, res) {
         if (err) done(err)
         else {
             for (var i in res) {
                 results.push({title: res[i].title, abstract: res[i].abstract});
             }
         };
-        wikiModel.find({abstract: new ReqExp(searchString, 'i')}).exec(function(err, res) {
+        wikiModel.find({abstract: new RegExp(searchString, 'i')}).exec(function(err, res) {
             if (err) done(err)
             else {
                 for(var i in res) {
                     results.push({title: res[i].title, abstract: res[i].abstract});
                 };
                 done(null, results);
-            }
+            };
         })
     })
-}
+};
 
 
 exports.getWiki = getWiki;

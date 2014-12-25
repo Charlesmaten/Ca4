@@ -27,6 +27,23 @@ angular.module('myAppRename.view3', ['ngRoute'])
             $scope.error = data;
           });
       }
+
+        $scope.findWiki = function () {
+            $http({
+                method: 'GET',
+                url: 'api/findWiki/' + $scope.searchString
+            })
+                .success(function(data, status, headers, config){
+                    $scope.foundWiki = data;
+                })
+                .error(function(data, status, headers, config) {
+                    $scope.error = data;
+                });
+        }
+
+
+
+
     });
 
 
