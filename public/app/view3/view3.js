@@ -13,8 +13,27 @@ angular.module('myAppRename.view3', ['ngRoute'])
     $scope.searchString = "";
     $scope.found = "";
 
+        $scope.showThis = function(){
 
-    $scope.getWiki = function () {
+            this.showing = true;
+
+        }
+
+        $scope.hoverOver = function(){
+
+            this.hoverEdit = true;
+        };
+
+        $scope.hoverOut = function(){
+
+            this.hoverEdit = false;
+        };
+
+
+
+
+
+        $scope.getWiki = function () {
 
       $http({
         method: 'GET',

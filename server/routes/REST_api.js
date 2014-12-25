@@ -29,6 +29,29 @@ router.get('/findWiki/:search', function(req, res) {
   });
 });
 
+router.get('/categoriesAndTitles/:letter', function(req, res) {
+
+  var searchLetter = req.params.letter;
+
+  dataLayer.categoriesAndTitles(searchLetter,function(err, result){
+    if (err) res.status(500).send("upps" + err);
+    else {
+      res.json(result);
+    }
+
+  });
+});
+
+router.get('/getCategories', function(req, res) {
+
+  dataLayer.getCategories(function(err, result){
+    if (err) res.status(500).send("Hovsa" + err);
+    else {
+      res.json(result);
+    }
+
+  });
+});
 
 
 

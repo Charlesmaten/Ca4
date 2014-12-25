@@ -7,20 +7,20 @@
     <input ng-model="searchString" type="text" name="search" id="search" value="" />
     <br/>
     <br/>
-    <input ng-click="getWiki()" type="submit" name="gettingWiki" value="Search specific title" class="btn btn-primary" />
-    <input ng-click="findWiki()" type="submit" name="findingWiki" value="Search everything" class="btn btn-primary"/>
+    <input ng-click="getWiki()" type="submit" name="gettingWiki" value="Search specific title" class="btn btn-success" />
+    <input ng-click="findWiki()" type="submit" name="findingWiki" value="Search everything" class="btn btn-success"/>
 </form>
 <h4><strong>Search Results</strong></h4>
 
 
 <br/>
 
-<table class="table" ng-repeat="wiki in foundWiki" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+<table class="table" ng-repeat="wiki in foundWiki" ng-mouseover="hoverOver()" ng-mouseleave="hoverOut()">
 
     <tr>
         <td>
             <h5>
-                <button ng-click="showThis()">{{wiki.title}}</button>
+                <button class="btn btn-info" ng-click="showThis()">{{wiki.title}}</button>
             </h5>
         </td>
         <td>
