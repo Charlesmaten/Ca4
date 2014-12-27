@@ -1,0 +1,35 @@
+
+<h3><strong>Search</strong></h3>
+
+<p>What would you like to search for?</p>
+
+<form method="get" action="">
+    <input ng-model="searchString" type="text" name="search" id="search" value="" />
+    <br/>
+    <br/>
+    <input ng-click="getWiki()" type="submit" name="gettingWiki" value="Search specific title" class="btn btn-success" />
+    <input ng-click="findWiki()" type="submit" name="findingWiki" value="Search everything" class="btn btn-success"/>
+</form>
+<h4><strong>Search Results</strong></h4>
+
+
+<br/>
+
+<table class="table" ng-repeat="wiki in foundWiki" ng-mouseover="hoverOver()" ng-mouseleave="hoverOut()">
+
+    <tr>
+        <td>
+            <h5>
+                <button class="btn btn-info" ng-click="showThis()">{{wiki.title}}</button>
+            </h5>
+        </td>
+        <td>
+            <div ng-show="hoverEdit">
+                {{wiki.abstract}}
+            </div>
+        </td>
+
+
+    </tr>
+    </tr>
+</table>
